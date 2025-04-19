@@ -7,11 +7,12 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import writeVox from "vox-saver"
 import * as fs from "node:fs"
+import packageJSON from "./package.json" with { type: "json" };
 
 // Create an MCP server
 const server = new McpServer({
     name: "VoxBuilder",
-    version: "0.0.1",
+    version: packageJSON.version,
 });
 
 interface Block {
