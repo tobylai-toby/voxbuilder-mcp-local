@@ -1,0 +1,31 @@
+{
+  "name": "voxbuilder-mcp-local",
+  "version": "0.0.4",
+  "description": "MCP Server to create and draw .vox models file locally",
+  "main": "build/index.cjs",
+  "type": "module",
+  "scripts": {
+    "test": "tsx index.ts",
+    "build": "esbuild --bundle --outfile=build/index.cjs index.ts --platform=node --minify --target=node18",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "tobylai",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "esbuild": "^0.25.2",
+    "tsx": "^4.19.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.1",
+    "lodash": "^4.17.21",
+    "vox-saver": "^2.0.3",
+    "zod": "^3.24.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bin": {
+    "voxbuilder-mcp-local": "build/index.cjs"
+  }
+}
